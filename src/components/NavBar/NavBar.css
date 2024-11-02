@@ -1,0 +1,27 @@
+.navlink {
+  text-decoration: none;
+  color: rgb(66, 66, 66);
+}
+
+/* Your active class */
+.active {
+  color: #23be0a;
+  border: #23be0a solid 2px;
+  background: #ffffff;
+}
+
+.tab {
+  border: 1px solid #ccc;
+}
+
+.tab.active {
+  background-color: #23be0a;
+  color: white;
+  border: 1px solid #23be0a;
+}
+
+.react-tabs__tab--selected {
+  background-color: white;
+  color: #23be0a;
+  border-color: #23be0a;
+}
