@@ -93,12 +93,48 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="p-2 cursor-pointer rounded-lg text-base border-2 solid border-[#23BE0A] font-semibold hover:bg-[#fff] text-[#23BE0A] bg-[#fff]">
+        <NavLink
+          to="/singIn"
+          className="p-2 cursor-pointer rounded-lg text-base border-2 solid "
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  fontWeight: "600",
+                  background: "#f0fdf4",
+                  border: "solid 2px #23BE0A",
+                  color: "#23BE0A",
+                }
+              : {
+                  fontWeight: "600",
+                  background: "#f0fdf4",
+                  border: "solid 2px #23BE0A",
+                  color: "#23BE0A",
+                }
+          }
+        >
           Sing In
-        </a>
-        <a className="p-2 ml-4 cursor-pointer rounded-lg text-base border-2 solid border-[#23BE0A] font-semibold hover:bg-[#23BE0A] text-[#fff] bg-[#23BE0A]">
+        </NavLink>
+        <NavLink
+          to="/singUp"
+          className="p-2 cursor-pointer rounded-lg ml-2 text-base border-2 solid "
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  fontWeight: "600",
+                  color: "white",
+                  background: "#23BE0A",
+                  border: "solid 2px #23BE0A",
+                }
+              : {
+                  fontWeight: "600",
+                  color: "white",
+                  background: "#23BE0A",
+                  border: "solid 2px #23BE0A",
+                }
+          }
+        >
           Sing Up
-        </a>
+        </NavLink>
       </div>
     </div>
   );

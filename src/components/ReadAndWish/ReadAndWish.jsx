@@ -25,7 +25,7 @@ export default function ReadAndWish({ book }) {
         <h2 className="text-2xl font-bold">{bookName}</h2>
         <h2 className="my-3">By, {author}</h2>
 
-        <div className="flex justify-start my-2 gap-4">
+        <div className="flex justify-start my-2 gap-4 overflow-x-auto whitespace-nowrap">
           <strong>Tag</strong>
           {tags.map((tag, index) => (
             <button
@@ -42,7 +42,7 @@ export default function ReadAndWish({ book }) {
           </h1>
         </div>
 
-        <div className="flex justify-start my-2 gap-6">
+        <div className="flex justify-start my-2 gap-6 overflow-x-auto whitespace-nowrap">
           <h1 className="text-gray-500 font-medium">
             <i class="fas fa-user-friends mr-3"></i>Publisher: {publisher}
           </h1>
@@ -51,7 +51,7 @@ export default function ReadAndWish({ book }) {
           </h1>
         </div>
         <div class="divider w-full"></div>
-        <div className="flex justify-start my-2 gap-6">
+        <div className="flex justify-start my-2 gap-6 overflow-x-auto whitespace-nowrap">
           <button className="btn btn-sm rounded-full bg-blue-100 text-blue-500">
             Category: {category}
           </button>

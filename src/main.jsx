@@ -11,6 +11,8 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Home from "./components/Home/Home";
 import ListedBooks from "./components/ListedBooks/ListedBooks";
 import Root from "./components/Root/Root";
+import SingIn from "./components/SingIn/SingIn";
+import SingUp from "./components/SingUp/SingUp";
 
 const router = createBrowserRouter([
   {
@@ -28,15 +30,23 @@ const router = createBrowserRouter([
         loader: () => fetch("/booksData.json"),
       },
       {
-        path: "listedBooks",
+        path: "/listedBooks",
         element: <ListedBooks></ListedBooks>,
 
         loader: () => fetch("/booksData.json"),
       },
       {
-        path: "dashboard",
+        path: "/dashboard",
         element: <Dashboard></Dashboard>,
         loader: () => fetch("/booksData.json"),
+      },
+      {
+        path: "/singIn",
+        element: <SingIn></SingIn>,
+      },
+      {
+        path: "/singUp",
+        element: <SingUp></SingUp>,
       },
     ],
   },
