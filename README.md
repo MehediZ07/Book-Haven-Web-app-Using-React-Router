@@ -30,3 +30,4 @@ This is a book information, book detail, and book review web application, where 
 ![Listed Book ](/src/assets/Listed.png)
 ![Book Details ](/src/assets/BookDetails.png)
 ![Dashboard ](/src/assets/PageToRead.png)
+![SingUp ](/src/assets/SingUp.png)
