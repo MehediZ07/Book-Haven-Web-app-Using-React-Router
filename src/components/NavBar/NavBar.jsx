@@ -1,7 +1,6 @@
-import React from "react";
+import { default as React, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
-
 const NavBar = () => {
   const links = (
     <>
@@ -31,6 +30,7 @@ const NavBar = () => {
                 }
               : { fontWeight: "600", background: "white" }
           }
+          className="mx-1"
         >
           Listed Books
         </NavLink>
@@ -55,8 +55,34 @@ const NavBar = () => {
     </>
   );
 
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  const handleScroll = () => {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop) {
+      setShowNav(false);
+    } else {
+      setShowNav(true);
+    }
+
+    setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll); // For mobile or negative scrolling
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
   return (
-    <div className="navbar bg-base-100">
+    <nav
+      className={`navbar bg-base-100 fixed top-0  max-w-6xl mx-auto z-[1000] bg-opacity-50 backdrop-blur-sm ${
+        showNav ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -136,7 +162,7 @@ const NavBar = () => {
           Sing Up
         </NavLink>
       </div>
-    </div>
+    </nav>
   );
 };
 

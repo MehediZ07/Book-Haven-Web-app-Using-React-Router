@@ -50,7 +50,7 @@ const Dashboard = () => {
   }));
 
   return (
-    <div className="overflow-x-auto min-h-[400px] whitespace-nowrap my-[100px]">
+    <div className="overflow-x-auto min-h-[500px] whitespace-nowrap my-[100px]">
       <BarChart
         width={300 * wishList.length}
         height={400}
